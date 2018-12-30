@@ -46,7 +46,7 @@ const renderGIF = (str) => {
   //loading mask
   const elem_loading_mask = document.getElementById('loadingMask');
   const elem_render_progress = document.getElementById('renderProgress');
-  elem_loading_mask.style.display="block";
+  elem_loading_mask.style.display = 'block';
 
   //GIF encode
   const gifEncoder = new GIFEncoder({
@@ -61,12 +61,12 @@ const renderGIF = (str) => {
 
   gifEncoder.on('finished', function(blob) {
     elem_loading_mask.style.display = 'none';
-    elem_render_progress.innerHTML =  "0%";
+    elem_render_progress.innerHTML =  '0%';
     FileSaver.saveAs(blob, 'fireworks-' + timestamp + '.gif');
   });
 
   gifEncoder.on('progress', function(p) {
-    elem_render_progress.innerHTML =  (Math.round(p * 100)) + "%";
+    elem_render_progress.innerHTML =  (Math.round(p * 100)) + '%';
   });
 
   //add frames
