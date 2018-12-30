@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   canvas.height = canvasHeight;
   const context = canvas.getContext('2d');
 
-  //slements
+  //elements
   const elem_gif_text = document.getElementById('gifText');
   const elem_render_btn = document.getElementById('renderButton');
 
