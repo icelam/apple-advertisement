@@ -18,7 +18,13 @@ All the build files can be found in `/dist` folder.
 
 * `npm run build`
 
+### Packages used ###
+
+* [gif.js.optimized](https://www.npmjs.com/package/gif.js.optimized)
+* [FileSaver](https://github.com/eligrey/FileSaver.js/)
+
 ***
+
 
 ### 參考資料 ###
 
