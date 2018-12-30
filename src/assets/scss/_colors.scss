@@ -1,0 +1,32 @@
+$color-white: #ffffff;
+$color-grey-98: #fafafa;
+$color-grey-93: #eeeeee;
+$color-grey-73: #bbbbbb;
+$color-grey-40: #666666;
+$color-grey-20: #333333;
+$color-black: #000000;
+
+$color-red: #d3394c;
+
+//body
+$color-body-background:  $color-grey-40;
+$color-font: $color-white;
+$color-hr: $color-grey-93;
+
+//preview
+$color-preview-border: $color-white;
+
+//form
+$color-form-background: $color-white;
+$color-input-background: $color-grey-98;
+$color-input-border: $color-grey-73;
+$color-remarks: $color-grey-40;
+$color-button-text: $color-white;
+$color-button-background: $color-grey-40;
+$color-button-background-hover: $color-grey-20;
+$color-error: $color-red;
+
+//loading mask
+$color-loading-mask-background: rgba($color-black, 0.5);
+$color-loading-box-background: $color-white;
+$color-loading-box-text: $color-grey-40;
