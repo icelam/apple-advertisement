@@ -8,3 +8,5 @@ yarn-error.log*
 /dist
 
 bundle-analyzer-plugin-report.html
+
+raw/fireworks.psd
