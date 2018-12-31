@@ -25,8 +25,14 @@ All the build files can be found in `/dist` folder.
 
 ***
 
-
 ### 參考資料 ###
 
 * [不能做李嘉誠，也要生成鄭子誠！Sorry有錢真係可以為所欲為生成器！](https://medium.com/@shawtim.liu/%E4%B8%8D%E8%83%BD%E5%81%9A%E6%9D%8E%E5%98%89%E8%AA%A0-%E4%B9%9F%E8%A6%81%E7%94%9F%E6%88%90%E9%84%AD%E5%AD%90%E8%AA%A0-sorry%E6%9C%89%E9%8C%A2%E7%9C%9F%E4%BF%82%E5%8F%AF%E4%BB%A5%E7%82%BA%E6%89%80%E6%AC%B2%E7%82%BA%E7%94%9F%E6%88%90%E5%99%A8-8e5fa6f93132)
 * [canvas+gif.js打造自己的数字雨头像](https://hk.saowen.com/a/fd621421972eceec8768d71a05209f7a68ed7c7bf89d81f0ce9dbc83eeaf14a5)
+
+### 影片來源 ###
+* [維港煙花賀國慶-2012-10-01](https://www.youtube.com/watch?v=RbPqZ30lms4)
+
+***
+
+Special thanks to Moses Yeung.

@@ -38,7 +38,6 @@ const renderGIF = (str) => {
   const offScreenContext = offScreenCanvas.getContext('2d');
 
   //render options
-  let renenderIndex = 0;
   const renderRate = parseInt(document.getElementById('renderRate').value);
   //const renenderQuality = parseInt(document.getElementById('renderQuality').value);
   const timestamp = new Date().getTime();
@@ -59,37 +58,45 @@ const renderGIF = (str) => {
     debug: false
   });
 
-  gifEncoder.on('finished', function(blob) {
+  gifEncoder.on('finished', (blob) => {
     elem_loading_mask.style.display = 'none';
     elem_render_progress.innerHTML =  '0%';
     FileSaver.saveAs(blob, 'fireworks-' + timestamp + '.gif');
   });
 
-  gifEncoder.on('progress', function(p) {
+  gifEncoder.on('progress', (p) => {
     elem_render_progress.innerHTML =  (Math.round(p * 100)) + '%';
   });
 
   //add frames
-  const loadFrameSequence = () => {
-    if (renenderIndex < images.length) {
+  const readImages = async(images) => {
+    for(let i = 0; i < images.length; i += renderRate) {
+      await addFrame(images[i]);
+    }
+  };
+
+  const addFrame = (image) => {
+    return new Promise((resolve, reject) => {
       let img = new Image();
       img.onload = () => {
         offScreenContext.clearRect(0, 0, canvasWidth, canvasHeight);
         offScreenContext.drawImage(img, 0, 0);
         drawText(offScreenContext, str, false);
         gifEncoder.addFrame(offScreenContext, {copy: true, delay: (100 * renderRate)});
-        //Load next frame
-        renenderIndex += renderRate;
-        loadFrameSequence();
+        resolve();
       };
 
-      img.src = images[renenderIndex];
-    } else {
-      gifEncoder.render();
-    }
+      img.onerror = () => {
+        reject();
+      };
+
+      img.src = image;
+    });
   };
 
-  loadFrameSequence();
+  readImages(images).then(() => {
+    gifEncoder.render();
+  });
 };
 
 /*
@@ -107,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const elem_render_btn = document.getElementById('renderButton');
 
   //Add listener to text field to update canvas
-  ['change', 'blur', 'keyup'].forEach(function(event) {
+  ['change', 'blur', 'keyup'].forEach((event) => {
     elem_gif_text.addEventListener(event, () => {
       drawText(context, elem_gif_text.value, true);
     });
