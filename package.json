@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "convertFrames": "node ./raw/imageToBase64.js > ./src/assets/js/images.js",
-    "setup": "cp ./node_modules/gif.js.optimized/dist/gif.worker.js ./src/gif.worker.js",
     "build": "webpack --config webpack/webpack.prod.conf.js  --colors",
     "dev": "webpack-dev-server --open --config webpack/webpack.dev.conf.js"
   },
