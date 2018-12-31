@@ -59,6 +59,11 @@ const renderGIF = (str) => {
   });
 
   gifEncoder.on('finished', (blob) => {
+    //hack to terminate web workers due to module bug
+    gifEncoder.freeWorkers.forEach((worker) => { 
+      worker.terminate();
+    });
+
     elem_loading_mask.style.display = 'none';
     elem_render_progress.innerHTML =  '0%';
     FileSaver.saveAs(blob, 'fireworks-' + timestamp + '.gif');
