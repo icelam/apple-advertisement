@@ -5,9 +5,9 @@ const baseWebpackConfig = require('./webpack.base.conf')
 
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',
-  devtool: 'cheap-eval-source-map',
+  devtool: 'source-map',
   output: {
-    chunkFilename: 'js/[name].chunk.js'
+    chunkFilename: 'assets/js/[name].chunk.js'
   },
   devServer: {
     inline: true, 
