@@ -14,8 +14,8 @@
     <meta property="og:title" content="「蘋果廣告製作公司」廣告生成器" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pinkylam.me/generator/apple-advertisement/" />
-    <meta property="og:image" content="http://pinkylam.me/generator/apple-advertisement/assets/images/og/og-image.jpg" />
-    <meta property="og:image:secure_url" content="https://pinkylam.me/generator/apple-advertisement/assets/og/images/og-image.jpg" />
+    <meta property="og:image" content="https://pinkylam.me/generator/apple-advertisement/assets/images/og/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://pinkylam.me/generator/apple-advertisement/assets/images/og/og-image.jpg" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1920" />
     <meta property="og:image:height" content="1080" />
@@ -24,7 +24,7 @@
     <meta name="theme-color" content="#ffffff" />
     
     <!-- Web App Tags: For add to home screen -->
-    <!--<link rel="manifest" href="manifest.json">-->
+    <link rel="manifest" href="manifest.json">
 
     <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -117,5 +117,19 @@
       </div>
     </div>
     <!-- /Loading mask -->
+
+    <!-- PWA -->
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./service-worker.js').then(registration => {
+            console.log('SW registered: ', registration);
+          }).catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+        });
+      }
+    </script>
+    <!-- PWA -->
   </body>
 </html>

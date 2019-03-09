@@ -27,7 +27,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist'], { root: Path.resolve(__dirname, '..') }),
     new CopyWebpackPlugin([
       { from: Path.resolve(__dirname, '../src/assets/images/og'), to: 'assets/images/og' },
-      { from: Path.resolve('node_modules', 'gif.js.optimized/dist/gif.worker.js'), to: 'gif.worker.js' }
+      { from: Path.resolve('node_modules', 'gif.js.optimized/dist/gif.worker.js'), to: 'gif.worker.js' },
+      { from: Path.resolve(__dirname, '../src/manifest.json'), to: 'manifest.json' }
     ]),
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, '../src/index.html'),
