@@ -1,8 +1,6 @@
-const Path = require('path');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -30,8 +28,8 @@ module.exports = merge(baseWebpackConfig, {
       globIgnores: ['**/.DS_Store']
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: "static",
-      reportFilename: '../bundle-analyzer-plugin-report.html',
+      analyzerMode: 'static',
+      reportFilename: '../bundle-analyzer-plugin-report.html'
     })
   ],
   module: {
