@@ -1,5 +1,5 @@
 const Path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -24,7 +24,7 @@ module.exports = {
     }
   },
   plugins: [
-    new CleanWebpackPlugin(['dist'], { root: Path.resolve(__dirname, '..') }),
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       { from: Path.resolve(__dirname, '../src/assets/images/og'), to: 'assets/images/og' },
       { from: Path.resolve('node_modules', 'gif.js.optimized/dist/gif.worker.js'), to: 'gif.worker.js' },
@@ -60,7 +60,7 @@ module.exports = {
           Path.resolve(__dirname, '../src/assets/fonts')
         ],
         options: {
-          // limit: 10000,
+          esModule: false, // to solve [object Module] url in html
           limit: -1,
           name: 'assets/images/[ext]/[name].[hash:7].[ext]'
         }
@@ -69,7 +69,6 @@ module.exports = {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          // limit: 10000,
           limit: -1,
           name: 'assets/media/[name].[hash:7].[ext]'
         }
