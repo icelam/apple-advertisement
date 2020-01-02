@@ -48,7 +48,12 @@ module.exports = merge(baseWebpackConfig, {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            envName: 'production'
+          }
+        }]
       },
       {
         test: /\.s?css/i,
