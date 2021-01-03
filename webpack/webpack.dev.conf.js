@@ -1,6 +1,6 @@
-const Path = require('path');
+const path = require('path');
 const Webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf');
 
 module.exports = merge(baseWebpackConfig, {
@@ -28,7 +28,7 @@ module.exports = merge(baseWebpackConfig, {
     rules: [
       {
         test: /\.(js)$/,
-        include: Path.resolve(__dirname, '../src'),
+        include: path.resolve(__dirname, '../src'),
         enforce: 'pre',
         loader: 'eslint-loader',
         options: {
@@ -37,7 +37,7 @@ module.exports = merge(baseWebpackConfig, {
       },
       {
         test: /\.(js)$/,
-        include: Path.resolve(__dirname, '../src'),
+        include: path.resolve(__dirname, '../src'),
         loader: 'babel-loader'
       },
       {

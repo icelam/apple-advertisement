@@ -1,5 +1,5 @@
 const Webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const baseWebpackConfig = require('./webpack.base.conf');
 const WorkboxPlugin = require('workbox-webpack-plugin');
